@@ -1,6 +1,7 @@
 import React from 'react';
 import Title from './components/Title';
 import Form from './components/Form';
+import Card from './components/Card';
 
 class App extends React.Component {
   render() {
@@ -10,6 +11,7 @@ class App extends React.Component {
           <Title title="Adicionar nova carta" />
         </header>
         <Form />
+        <Card />
       </main>
     );
   }
