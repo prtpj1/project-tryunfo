@@ -4,7 +4,7 @@ class Form extends React.Component {
   render() {
     return (
       <form>
-        <sectionn>
+        <section>
           <label htmlFor="inpt-name">
             Name:
             <br />
@@ -26,7 +26,7 @@ class Form extends React.Component {
               type="textarea"
             />
           </label>
-        </sectionn>
+        </section>
         <section>
           <label htmlFor="inpt-attr1">
             Attr1:
