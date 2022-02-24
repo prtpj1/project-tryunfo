@@ -1,11 +1,16 @@
 import React from 'react';
+import Title from './components/Title';
+import Form from './components/Form';
 
 class App extends React.Component {
   render() {
     return (
-      <div>
-        <h1>Tryunfo!</h1>
-      </div>
+      <main>
+        <header>
+          <Title title="Adicionar nova carta" />
+        </header>
+        <Form />
+      </main>
     );
   }
 }
