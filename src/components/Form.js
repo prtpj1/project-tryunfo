@@ -21,65 +21,65 @@ class Form extends React.Component {
     return (
       <form>
         <section>
-          <label htmlFor="inpt-name">
+          <label htmlFor="inptName">
             Name:
             <br />
             <input
               data-testid="name-input"
-              id="inpt-name"
-              name="inpt-name"
+              id="inptName"
+              name="nameInput"
               onChange={ onInputChange }
               type="text"
               value={ cardName }
             />
           </label>
           <br />
-          <label htmlFor="inpt-desc">
+          <label htmlFor="inptDesc">
             Description:
             <br />
             <textarea
               data-testid="description-input"
-              id="inpt-desc"
-              name="inpt-desc"
+              id="inptDesc"
+              name="inptDesc"
               onChange={ onInputChange }
               value={ cardDescription }
             />
           </label>
         </section>
         <section>
-          <label htmlFor="inpt-attr1">
+          <label htmlFor="inptAttr1">
             Attr1:
             <br />
             <input
               data-testid="attr1-input"
-              id="inpt-attr1"
-              name="inpt-attr1"
+              id="inptAttr1"
+              name="inptAttr1"
               onChange={ onInputChange }
               type="number"
               value={ cardAttr1 }
             />
           </label>
           <br />
-          <label htmlFor="inpt-attr2">
+          <label htmlFor="inptAttr2">
             Attr2:
             <br />
             <input
               data-testid="attr2-input"
-              id="inpt-attr2"
-              name="inpt-attr2"
+              id="inptAttr2"
+              name="inptAttr2"
               onChange={ onInputChange }
               type="number"
               value={ cardAttr2 }
             />
           </label>
           <br />
-          <label htmlFor="inpt-attr3">
+          <label htmlFor="inptAttr3">
             Attr3:
             <br />
             <input
               data-testid="attr3-input"
-              id="inpt-attr3"
-              name="inpt-attr3"
+              id="inptAttr3"
+              name="inptAttr3"
               onChange={ onInputChange }
               type="number"
               value={ cardAttr3 }
@@ -87,13 +87,13 @@ class Form extends React.Component {
           </label>
         </section>
         <section>
-          <label htmlFor="inpt-image">
+          <label htmlFor="inptImage">
             Image:
             <br />
             <input
               data-testid="image-input"
-              id="inpt-image"
-              name="inpt-image"
+              id="inptImage"
+              name="inptImage"
               onChange={ onInputChange }
               type="text"
               value={ cardImage }
@@ -103,8 +103,8 @@ class Form extends React.Component {
         <section>
           <select
             data-testid="rare-input"
-            id="inpt-rare"
-            name="inpt-rare"
+            id="inptRare"
+            name="inptRare"
             onChange={ onInputChange }
             value={ cardRare }
           >
@@ -114,11 +114,11 @@ class Form extends React.Component {
           </select>
         </section>
         <section>
-          <label htmlFor="inpt-trunfo">
+          <label htmlFor="inptTrunfo">
             <input
               data-testid="trunfo-input"
-              id="inpt-trunfo"
-              name="inpt-trunfo"
+              id="inptTrunfo"
+              name="inptTrunfo"
               onChange={ onInputChange }
               type="checkbox"
               checked={ cardTrunfo }
@@ -130,8 +130,8 @@ class Form extends React.Component {
           <button
             data-testid="save-button"
             disabled={ isSaveButtonDisabled }
-            id="btn-save"
-            name="btn-save"
+            id="btnSave"
+            name="btnSave"
             onClick={ onSaveButtonClick }
             type="submit"
           >
