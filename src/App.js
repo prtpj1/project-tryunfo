@@ -8,7 +8,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      nameInput: '',
+      inptName: '',
       inptDesc: '',
       inptAttr1: '',
       inptAttr2: '',
@@ -16,6 +16,7 @@ class App extends React.Component {
       inptImage: '',
       inptRare: '',
       inptTrunfo: '',
+      isSaveButtonDisabled: true,
     };
   }
 
@@ -23,16 +24,38 @@ class App extends React.Component {
     const { name, value } = target;
     this.setState({
       [name]: value,
-    });
+    }, this.formValidation);
   };
 
   onSaveButtonClick = (e) => {
     e.preventDefault();
   };
 
+  formValidation = () => {
+    const {
+      // inptName,
+      // inptDesc,
+      // inptImage,
+      // inptRare,
+      inptAttr1,
+      inptAttr2,
+      inptAttr3,
+    } = this.state;
+
+    const sumLimit = 210;
+    const attrSum = (Number(inptAttr1) + Number(inptAttr2) + Number(inptAttr3));
+    console.log(typeof inptAttr1);
+
+    if ((attrSum) <= sumLimit) {
+      this.setState({ isSaveButtonDisabled: false });
+    } else {
+      this.setState({ isSaveButtonDisabled: true });
+    }
+  }
+
   render() {
     const {
-      nameInput,
+      inptName,
       inptDesc,
       inptAttr1,
       inptAttr2,
@@ -40,6 +63,7 @@ class App extends React.Component {
       inptImage,
       inptRare,
       inptTrunfo,
+      isSaveButtonDisabled,
     } = this.state;
 
     return (
@@ -48,7 +72,7 @@ class App extends React.Component {
           <Title title="Adicionar nova carta" />
         </header>
         <Form
-          cardName={ nameInput }
+          cardName={ inptName }
           cardDescription={ inptDesc }
           cardAttr1={ inptAttr1 }
           cardAttr2={ inptAttr2 }
@@ -58,9 +82,11 @@ class App extends React.Component {
           cardTrunfo={ inptTrunfo }
           onInputChange={ this.onInputChange }
           onSaveButtonClick={ this.onSaveButtonClick }
+          isSaveButtonDisabled={ isSaveButtonDisabled }
         />
+        <div>{console.log(inptName)}</div>
         <Card
-          cardName={ nameInput }
+          cardName={ inptName }
           cardDescription={ inptDesc }
           cardAttr1={ inptAttr1 }
           cardAttr2={ inptAttr2 }
