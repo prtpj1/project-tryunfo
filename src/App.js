@@ -33,24 +33,39 @@ class App extends React.Component {
 
   formValidation = () => {
     const {
-      // inptName,
-      // inptDesc,
-      // inptImage,
-      // inptRare,
+      inptName,
+      inptDesc,
+      inptImage,
       inptAttr1,
       inptAttr2,
       inptAttr3,
     } = this.state;
 
-    const sumLimit = 210;
-    const attrSum = (Number(inptAttr1) + Number(inptAttr2) + Number(inptAttr3));
-    console.log(typeof inptAttr1);
+    const fields = [inptName, inptDesc, inptImage];
+    const emptyFields = fields.some((field) => field === '');
 
-    if ((attrSum) <= sumLimit) {
-      this.setState({ isSaveButtonDisabled: false });
-    } else {
+    const sumLimit = 210;
+    const attrLimit = 90;
+    const attr1 = Number(inptAttr1);
+    const attr2 = Number(inptAttr2);
+    const attr3 = Number(inptAttr3);
+    const attrSum = (attr1 + attr2 + attr3);
+
+    const isAbove210 = attrSum > sumLimit;
+    const isAbove90 = (attr1 > attrLimit)
+    || (attr2 > attrLimit)
+    || (attr3 > attrLimit);
+    const isBellowZero = (attr1 < 0)
+    || (attr2 < 0)
+    || (attr3 < 0);
+
+    const isValid = (emptyFields || isAbove210 || isAbove90 || isBellowZero);
+    if (isValid) {
       this.setState({ isSaveButtonDisabled: true });
+    } else {
+      this.setState({ isSaveButtonDisabled: false });
     }
+    console.log(isValid);
   }
 
   render() {
@@ -84,7 +99,7 @@ class App extends React.Component {
           onSaveButtonClick={ this.onSaveButtonClick }
           isSaveButtonDisabled={ isSaveButtonDisabled }
         />
-        <div>{console.log(inptName)}</div>
+        {/* <div>{console.log(inptName)}</div> */}
         <Card
           cardName={ inptName }
           cardDescription={ inptDesc }
