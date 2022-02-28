@@ -15,8 +15,9 @@ class App extends React.Component {
       inptAttr3: '',
       inptImage: '',
       inptRare: '',
-      inptTrunfo: '',
+      inptTrunfo: false,
       isSaveButtonDisabled: true,
+      data: [],
     };
   }
 
@@ -27,8 +28,21 @@ class App extends React.Component {
     }, this.formValidation);
   };
 
-  onSaveButtonClick = (e) => {
-    e.preventDefault();
+  onSaveButtonClick = (event) => {
+    event.preventDefault();
+    const { data } = this.state;
+
+    this.setState({
+      inptName: '',
+      inptDesc: '',
+      inptAttr1: '0',
+      inptAttr2: '0',
+      inptAttr3: '0',
+      inptImage: '',
+      inptRare: 'normal',
+      inptTrunfo: false,
+      data: [...data, event],
+    });
   };
 
   formValidation = () => {
@@ -65,7 +79,7 @@ class App extends React.Component {
     } else {
       this.setState({ isSaveButtonDisabled: false });
     }
-    console.log(isValid);
+    // console.log(isValid);
   }
 
   render() {
@@ -99,7 +113,6 @@ class App extends React.Component {
           onSaveButtonClick={ this.onSaveButtonClick }
           isSaveButtonDisabled={ isSaveButtonDisabled }
         />
-        {/* <div>{console.log(inptName)}</div> */}
         <Card
           cardName={ inptName }
           cardDescription={ inptDesc }
