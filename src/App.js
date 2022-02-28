@@ -16,15 +16,17 @@ class App extends React.Component {
       inptImage: '',
       inptRare: '',
       inptTrunfo: false,
+      hasTrunfo: false,
       isSaveButtonDisabled: true,
       data: [],
     };
   }
 
   onInputChange = ({ target }) => {
-    const { name, value } = target;
+    const { name, value, type } = target;
     this.setState({
       [name]: value,
+      [name]: (type === 'checkbox' ? target.checked : ''),
     }, this.formValidation);
   };
 
@@ -43,6 +45,7 @@ class App extends React.Component {
       inptTrunfo: false,
       data: [...data, event],
     });
+    console.log(data);
   };
 
   formValidation = () => {
@@ -53,6 +56,7 @@ class App extends React.Component {
       inptAttr1,
       inptAttr2,
       inptAttr3,
+      inptTrunfo,
     } = this.state;
 
     const fields = [inptName, inptDesc, inptImage];
@@ -73,13 +77,21 @@ class App extends React.Component {
     || (attr2 < 0)
     || (attr3 < 0);
 
-    const isValid = (emptyFields || isAbove210 || isAbove90 || isBellowZero);
+    const hasTrunfo = inptTrunfo
+      ? this.setState({ hasTrunfo: true })
+      : this.setState({ hasTrunfo: false });
+
+    const isValid = (emptyFields
+      || isAbove210
+      || isAbove90
+      || isBellowZero
+      || hasTrunfo);
     if (isValid) {
       this.setState({ isSaveButtonDisabled: true });
     } else {
       this.setState({ isSaveButtonDisabled: false });
     }
-    // console.log(isValid);
+    // console.log(inptTrunfo);
   }
 
   render() {
@@ -92,6 +104,7 @@ class App extends React.Component {
       inptImage,
       inptRare,
       inptTrunfo,
+      hasTrunfo,
       isSaveButtonDisabled,
     } = this.state;
 
@@ -108,6 +121,7 @@ class App extends React.Component {
           cardAttr3={ inptAttr3 }
           cardImage={ inptImage }
           cardRare={ inptRare }
+          hasTrunfo={ hasTrunfo }
           cardTrunfo={ inptTrunfo }
           onInputChange={ this.onInputChange }
           onSaveButtonClick={ this.onSaveButtonClick }
