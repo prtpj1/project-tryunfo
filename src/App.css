@@ -1,3 +1,14 @@
+body {
+  margin-left: 20px;
+}
+
 img {
   max-width: 300px;
+}
+
+.card {
+  border: 1px solid black;
+  margin-top: 20px;
+  padding: 10px;
+  width: 200px;
 }

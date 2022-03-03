@@ -8,135 +8,170 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      inptName: '',
-      inptDesc: '',
-      inptAttr1: '',
-      inptAttr2: '',
-      inptAttr3: '',
-      inptImage: '',
-      inptRare: '',
-      inptTrunfo: false,
+      cardName: '',
+      cardDescription: '',
+      cardAttr1: '',
+      cardAttr2: '',
+      cardAttr3: '',
+      cardImage: '',
+      cardRare: '',
+      cardTrunfo: false,
       hasTrunfo: false,
       isSaveButtonDisabled: true,
-      data: [],
+      deck: [],
     };
   }
 
   onInputChange = ({ target }) => {
-    const { name, value, type } = target;
-    this.setState({
-      [name]: value,
-      [name]: (type === 'checkbox' ? target.checked : ''),
-    }, this.formValidation);
+    const { name } = target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+
+    this.setState(
+      {
+        [name]: value,
+      },
+      this.formValidation,
+    );
+    // console.log(cardTrunfo);
   };
 
   onSaveButtonClick = (event) => {
     event.preventDefault();
-    const { data } = this.state;
+    const {
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare,
+      cardTrunfo,
+      hasTrunfo,
+    } = this.state;
 
-    this.setState({
-      inptName: '',
-      inptDesc: '',
-      inptAttr1: '0',
-      inptAttr2: '0',
-      inptAttr3: '0',
-      inptImage: '',
-      inptRare: 'normal',
-      inptTrunfo: false,
-      data: [...data, event],
-    });
-    console.log(data);
+    const storedCards = {
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare,
+      cardTrunfo,
+      hasTrunfo,
+    };
+    this.setState((newCard) => ({
+      deck: [...newCard.deck, storedCards],
+      cardName: '',
+      cardDescription: '',
+      cardAttr1: '0',
+      cardAttr2: '0',
+      cardAttr3: '0',
+      cardImage: '',
+      cardRare: 'normal',
+      cardTrunfo: false,
+      isSaveButtonDisabled: true,
+    }));
+    // console.log(deck.cardName);
   };
 
   formValidation = () => {
     const {
-      inptName,
-      inptDesc,
-      inptImage,
-      inptAttr1,
-      inptAttr2,
-      inptAttr3,
-      inptTrunfo,
+      cardName,
+      cardDescription,
+      cardImage,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardTrunfo,
     } = this.state;
 
-    const fields = [inptName, inptDesc, inptImage];
+    const fields = [cardName, cardDescription, cardImage];
     const emptyFields = fields.some((field) => field === '');
 
     const sumLimit = 210;
     const attrLimit = 90;
-    const attr1 = Number(inptAttr1);
-    const attr2 = Number(inptAttr2);
-    const attr3 = Number(inptAttr3);
-    const attrSum = (attr1 + attr2 + attr3);
+    const attr1 = Number(cardAttr1);
+    const attr2 = Number(cardAttr2);
+    const attr3 = Number(cardAttr3);
+    const attrSum = attr1 + attr2 + attr3;
 
     const isAbove210 = attrSum > sumLimit;
-    const isAbove90 = (attr1 > attrLimit)
-    || (attr2 > attrLimit)
-    || (attr3 > attrLimit);
-    const isBellowZero = (attr1 < 0)
-    || (attr2 < 0)
-    || (attr3 < 0);
+    const isAbove90 = attr1 > attrLimit || attr2 > attrLimit || attr3 > attrLimit;
+    const isBellowZero = attr1 < 0 || attr2 < 0 || attr3 < 0;
 
-    const hasTrunfo = inptTrunfo
+    const hasTrunfo = cardTrunfo
       ? this.setState({ hasTrunfo: true })
       : this.setState({ hasTrunfo: false });
 
-    const isValid = (emptyFields
-      || isAbove210
-      || isAbove90
-      || isBellowZero
-      || hasTrunfo);
+    const isValid = emptyFields || isAbove210 || isAbove90 || isBellowZero || hasTrunfo;
     if (isValid) {
       this.setState({ isSaveButtonDisabled: true });
     } else {
       this.setState({ isSaveButtonDisabled: false });
     }
-    // console.log(inptTrunfo);
-  }
+    // console.log(cardTrunfo);
+  };
 
   render() {
     const {
-      inptName,
-      inptDesc,
-      inptAttr1,
-      inptAttr2,
-      inptAttr3,
-      inptImage,
-      inptRare,
-      inptTrunfo,
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare,
+      cardTrunfo,
       hasTrunfo,
       isSaveButtonDisabled,
+      deck,
     } = this.state;
 
     return (
       <main>
         <header>
-          <Title title="Adicionar nova carta" />
+          <Title title="Nova carta" />
         </header>
         <Form
-          cardName={ inptName }
-          cardDescription={ inptDesc }
-          cardAttr1={ inptAttr1 }
-          cardAttr2={ inptAttr2 }
-          cardAttr3={ inptAttr3 }
-          cardImage={ inptImage }
-          cardRare={ inptRare }
+          cardName={ cardName }
+          cardDescription={ cardDescription }
+          cardAttr1={ cardAttr1 }
+          cardAttr2={ cardAttr2 }
+          cardAttr3={ cardAttr3 }
+          cardImage={ cardImage }
+          cardRare={ cardRare }
           hasTrunfo={ hasTrunfo }
-          cardTrunfo={ inptTrunfo }
+          cardTrunfo={ cardTrunfo }
           onInputChange={ this.onInputChange }
           onSaveButtonClick={ this.onSaveButtonClick }
           isSaveButtonDisabled={ isSaveButtonDisabled }
         />
         <Card
-          cardName={ inptName }
-          cardDescription={ inptDesc }
-          cardAttr1={ inptAttr1 }
-          cardAttr2={ inptAttr2 }
-          cardAttr3={ inptAttr3 }
-          cardImage={ inptImage }
-          cardRare={ inptRare }
-          cardTrunfo={ inptTrunfo }
+          cardName={ cardName }
+          cardDescription={ cardDescription }
+          cardAttr1={ cardAttr1 }
+          cardAttr2={ cardAttr2 }
+          cardAttr3={ cardAttr3 }
+          cardImage={ cardImage }
+          cardRare={ cardRare }
+          cardTrunfo={ cardTrunfo }
         />
+        <div>
+          {deck.map((card) => (
+            <Card
+              key={ card.cardName }
+              cardName={ card.cardName }
+              cardDescription={ card.cardDescription }
+              cardAttr1={ card.cardAttr1 }
+              cardAttr2={ card.cardAttr2 }
+              cardAttr3={ card.cardAttr3 }
+              cardImage={ card.cardImage }
+              cardRare={ card.cardRare }
+              cardTrunfo={ card.cardTrunfo }
+            />
+          ))}
+        </div>
       </main>
     );
   }
