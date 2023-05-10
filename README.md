@@ -1,13 +1,45 @@
+# 10º Projeto: Tryunfo
+
 # :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+<!-- <p align="center">
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+<img src="" alt="Header" />
+</p> -->
+<hr/>
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+Neste projeto, desenvolvi uma aplicação para simular o jogo no estilo Super Trunfo!
+De acordo com os requisitos do projeto designados pela Trybe o usuário poderá:
+- Criar um baralho ✅ 
+- Adicionar uma carta ao baralho ✅
+- Remover uma carta do baralho ❌
+- Visualizar todas as cartas que foram adicionadas ao baralho ✅
+- Jogar com o baralho criado ❌
+<br>
+Esta app foi feita em react com a manipulação de estados em classes.
+<br>
+<hr/>
+
+## Tecnologias Utilizadas
+
+### FrontEnd:
+
+- HTML
+- CSS
+- JavaScript
+- React
+
+<img src="https://github.com/prtpj1/prtpj1/blob/main/Github%20Imgs/html2.png" width="50" height="50" alt="HTML" /><img src="https://github.com/prtpj1/prtpj1/blob/main/Github%20Imgs/CSS2.png" width="50" height="50" alt="CSS" /><img src="https://github.com/prtpj1/prtpj1/blob/main/Github%20Imgs/JavaScript2.png" width="50" height="50" alt="CSS" /><img src="https://github.com/prtpj1/prtpj1/blob/main/Github Imgs/React2.png" width="50" height="50" alt="React Icon" />
+
+## Link para visualizar o site do projeto:
+
+[Site do Projeto](https://prtpj1-tryunfo.netlify.app/)
+
+## Como rodar a aplicação?
+
+1. Clone o repositório: <br>
+`git clone git@github.com:prtpj1/project-tryunfo.git` 
+2. Instale as dependências: <br>
+`npm install`
+3. Inicie a aplicação: <br>
+`npm start` → aguarde a aplicação abrir no seu navegador. Caso não ocorra, coloque na barra de endereços do seu navegador: **http://localhost:3000/**
+<br>
