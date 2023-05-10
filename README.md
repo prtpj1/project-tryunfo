@@ -7,7 +7,7 @@
 </p> -->
 <hr/>
 
-Neste projeto, desenvolvi uma aplicação para simular o jogo no estilo Super Trunfo!
+Neste projeto, desenvolvi uma aplicação para simular o jogo de cartas no estilo Super Trunfo!<br>
 De acordo com os requisitos do projeto designados pela Trybe o usuário poderá:
 - Criar um baralho ✅ 
 - Adicionar uma carta ao baralho ✅
