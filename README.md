@@ -1,6 +1,6 @@
 # 10º Projeto: Tryunfo
 
-# :construction: README em construção ! :construction:
+# :construction: HEADER em construção ! :construction:
 O Tryunfo ainda não possui CSS, pois não pude fazer durante o curso. Assim que possivel estarei adicionando o CSS e as funcionalidades que ficaram faltando.
 <!-- <p align="center">
 
