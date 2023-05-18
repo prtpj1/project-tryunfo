@@ -13,7 +13,6 @@ De acordo com os requisitos do projeto designados pela Trybe o usuário poderá:
 - Adicionar uma carta ao baralho ✅
 - Remover uma carta do baralho ❌
 - Visualizar todas as cartas que foram adicionadas ao baralho ✅
-- Jogar com o baralho criado ❌
 <br>
 Esta app foi feita em react com a manipulação de estados em classes.
 <br>
