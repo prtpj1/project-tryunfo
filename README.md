@@ -1,6 +1,6 @@
 # 10º Projeto: Tryunfo
 
-# :construction: README customizado em construção ! :construction:
+# :construction: README em construção ! :construction:
 <!-- <p align="center">
 
 <img src="" alt="Header" />
