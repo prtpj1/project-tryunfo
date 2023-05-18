@@ -41,5 +41,5 @@ Esta app foi feita em react com a manipulação de estados em classes.
 2. Instale as dependências: <br>
 `npm install`
 3. Inicie a aplicação: <br>
-`npm start` → aguarde a aplicação abrir no seu navegador. Caso não ocorra, coloque na barra de endereços do seu navegador: **http://localhost:3000/**
+`npm start`⚠️Aguarde a aplicação abrir no seu navegador. Caso não ocorra, coloque na barra de endereços do seu navegador: **http://localhost:3000/**
 <br>
