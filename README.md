@@ -43,4 +43,11 @@ Esta app foi feita em react com a manipulação de estados em classes.
 3. Inicie a aplicação: <br>
 `npm start` <br>
 ⚠️Aguarde a aplicação abrir no seu navegador. Caso não ocorra, coloque na barra de endereços do seu navegador: `http://localhost:3000/`
-<br>
+</br>
+
+**OBS:**
+</br>
+*Na época que fiz este projeto eu ainda não conhecia os Conventional Commits. Somente a partir do módulo de BackEnd do curso da Trybe que aprendi e comecei a fazer commits melhores.
+</br>
+</br>
+Em breve estarei disponibilizando também os projetos dos módulos de **BackEnd** e **Ciência da Computação***
