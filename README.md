@@ -35,12 +35,13 @@ Esta app foi feita em react com a manipulação de estados em classes.
 [Site do Projeto](https://prtpj1-tryunfo.netlify.app/)
 
 ## Como rodar a aplicação?
-
-1. Clone o repositório: <br>
+- Clone o repositório: <br>
 `git clone git@github.com:prtpj1/project-tryunfo.git` 
-2. Instale as dependências: <br>
+- Acesse a pasta do projeto: <br>
+`cd project-tryunfo`
+- Instale as dependências: <br>
 `npm install`
-3. Inicie a aplicação: <br>
+- Inicie a aplicação: <br>
 `npm start` <br>
 ⚠️Aguarde a aplicação abrir no seu navegador. Caso não ocorra, coloque na barra de endereços do seu navegador: `http://localhost:3000/`
 </br>
