@@ -1,13 +1,11 @@
 # 10º Projeto: Tryunfo
 
-# :construction: HEADER em construção ! :construction:
-O Tryunfo ainda não possui CSS, pois não pude fazer durante o curso. Assim que possivel estarei adicionando o CSS e as funcionalidades que ficaram faltando.
-<!-- <p align="center">
-
-<img src="" alt="Header" />
-</p> -->
+<p align="center">
+<img src="https://github.com/prtpj1/prtpj1/blob/main/Headers/10-Tryunfo.jpg?raw=true" alt="Header" />
 <hr/>
+O Tryunfo ainda não possui CSS, pois não pude fazer durante o curso. Assim que possivel estarei adicionando o CSS e as funcionalidades que ficaram faltando.
 
+---
 Neste projeto, desenvolvi uma aplicação para simular o jogo de cartas no estilo Super Trunfo!<br>
 De acordo com os requisitos do projeto designados pela Trybe o usuário poderá:
 - Criar um baralho ✅ 
